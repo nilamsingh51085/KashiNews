@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">  
 <head>  
+    <!-- ✅ UTF-8 declaration is mandatory and already included -->
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Kashi Today | Your Daily News & Market Updates</title>  
@@ -76,9 +77,7 @@
             <h1 class="text-3xl md:text-4xl font-extrabold tracking-wider mb-1">
                 🌅 Kashi Today | Your Daily Dispatch 🇮🇳
             </h1>
-            <p class="text-sm italic">
-                Current Time: <span id="current-time"></span>
-            </p>
+            <!-- The live time display has been removed from here -->
         </div>
     </header>
 
@@ -233,12 +232,12 @@
                     💰 Live Market & Fuel Price
                 </h2>
 
-                <!-- Simulated Stock Market Ticker -->
+                <!-- Simulated Stock Market Ticker (SENSEX) -->
                 <div class="mb-6 p-4 rounded-xl border border-gray-200 shadow-inner">
                     <h4 class="text-lg font-bold mb-3 text-gray-800 flex justify-between items-center">
                         Indian Indices (Simulated)
                         <!-- Simple Chart Icon SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                     </h4>
                     
                     <div id="index-sensex" class="index-update flex justify-between items-center mb-2 p-2 rounded-lg bg-gray-50 border-2 border-transparent">
@@ -248,119 +247,125 @@
                             <span class="change text-sm ml-2 font-medium text-green-600">(+0.50%)</span>
                         </div>
                     </div>
-                    
+
+                    <!-- Simulated Stock Market Ticker (NIFTY) -->
                     <div id="index-nifty" class="index-update flex justify-between items-center p-2 rounded-lg bg-gray-50 border-2 border-transparent">
                         <span class="font-semibold text-sm text-gray-700">NIFTY 50</span>
                         <div class="text-right">
-                            <span class="value text-lg font-bold">22,750.00</span>
-                            <span class="change text-sm ml-2 font-medium text-red-600">(-0.25%)</span>
+                            <span class="value text-lg font-bold">22,500.00</span>
+                            <span class="change text-sm ml-2 font-medium text-green-600">(+0.35%)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Gold Price -->
-                <div class="mb-6 p-4 bg-yellow-50 rounded-xl border border-yellow-300">
-                    <h4 class="text-lg font-bold mb-2 text-yellow-800">Gold Price (Varanasi)</h4>
-                    <p class="text-2xl font-extrabold text-kashi-red">24K (10g): ₹74,800</p>
-                    <p class="text-lg font-semibold text-gray-700">22K (10g): ₹68,600</p>
-                </div>
-
-                <!-- Fuel Price -->
-                <div class="mb-6 p-4 bg-green-50 rounded-xl border border-green-300">
-                    <h4 class="text-lg font-bold mb-2 text-green-800">Petrol/Diesel (Varanasi)</h4>
-                    <p class="text-xl font-extrabold text-kashi-red mb-1">Petrol: ₹95.15</p>
-                    <p class="text-xl font-extrabold text-kashi-red">Diesel: ₹88.58</p>
+                <!-- Simulated Fuel Prices -->
+                <h4 class="text-lg font-bold mb-3 text-gray-800 border-b pb-1">⛽ Fuel Prices in Varanasi</h4>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <span class="font-medium text-gray-700">Petrol</span>
+                        <span class="text-lg font-bold text-gray-900">₹94.50/L</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <span class="font-medium text-gray-700">Diesel</span>
+                        <span class="text-lg font-bold text-gray-900">₹87.25/L</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium text-gray-700">CNG</span>
+                        <span class="text-lg font-bold text-gray-900">₹84.00/kg</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="fixed bottom-4 right-4 bg-kashi-gold text-kashi-red p-3 rounded-full shadow-2xl hover:bg-yellow-400 focus:outline-none opacity-0" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-        <!-- SVG for Up Arrow -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    <button id="scroll-to-top" class="fixed bottom-6 right-6 p-4 bg-kashi-red text-white rounded-full shadow-lg hover:bg-red-700 focus:outline-none z-30 opacity-0 pointer-events-none" onclick="scrollToTop()">
+        <!-- Arrow Up SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
-
-    <!-- ✅ Footer -->
-    <footer id="contact" class="bg-gray-800 text-white text-center p-4 mt-8">
-        <p class="text-xs mb-2">Founded and generated by <strong>Aryan Singh</strong>, Class 9th.</p>
-        <p class="text-sm">&copy; <span id="current-year">2025</span> Kashi Today News. All rights reserved.</p>
-    </footer>
-
-    <!-- ✅ JS for Time, Market, Quiz, and Scroll -->
+    
+    <!-- ✅ JavaScript -->
     <script>
-        // --- Core Utility Functions ---
-
-        // Function to update the current time display
-        function updateTime() {
-            const now = new Date();
-            const options = {
-                weekday: 'long', year: 'numeric', month: 'long',
-                day: 'numeric', hour: 'numeric', minute: 'numeric',
-                second: 'numeric', hour12: true
-            };
-            document.getElementById('current-time').textContent = now.toLocaleDateString('en-IN', options);
-            document.getElementById('current-year').textContent = now.getFullYear();
-        }
-
-        // Function to simulate dynamic market index updates
-        function updateMarketIndices() {
-            const sensexDiv = document.getElementById('index-sensex');
-            const niftyDiv = document.getElementById('index-nifty');
-
-            function updateIndex(element, initialValue, baseChange) {
-                const valueSpan = element.querySelector('.value');
-                const changeSpan = element.querySelector('.change');
-
-                // Simulate small fluctuation (max +/- 0.005% fluctuation per update)
-                const fluctuation = (Math.random() * 0.0005) * (Math.random() > 0.5 ? 1 : -1);
-                
-                let currentValue = parseFloat(valueSpan.textContent.replace(/,/g, '')) || initialValue;
-                let newValue = currentValue * (1 + fluctuation);
-                
-                // Calculate and update change percentage
-                const newBaseChange = baseChange + (newValue - initialValue) / initialValue * 1000;
-                const finalChange = newBaseChange + (Math.random() * 0.1 - 0.05); // Add minor random drift
-                const isPositive = finalChange >= 0;
-
-                // Update text and formatting
-                valueSpan.textContent = newValue.toLocaleString('en-IN', {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                });
-                changeSpan.textContent = `(${isPositive ? '+' : ''}${finalChange.toFixed(2)}%)`;
-
-                // Update color and visual indicator
-                changeSpan.className = 'change text-sm ml-2 font-medium transition duration-500';
-                element.className = 'index-update flex justify-between items-center mb-2 p-2 rounded-lg border-2 transition duration-500';
-                
-                if (isPositive) {
-                    changeSpan.classList.add('text-green-600');
-                    element.classList.add('border-green-500', 'bg-green-50');
-                } else {
-                    changeSpan.classList.add('text-red-600');
-                    element.classList.add('border-red-500', 'bg-red-50');
-                }
-                
-                // Flash the color change briefly and return to grey background
-                setTimeout(() => {
-                    element.classList.remove('bg-green-50', 'bg-red-50', 'border-green-500', 'border-red-500');
-                    element.classList.add('bg-gray-50', 'border-transparent');
-                }, 1000);
-
-                return finalChange;
-            }
-
-            // The 'baseChange' simulates a starting position for the day
-            let sensexChange = 0.50;
-            let niftyChange = -0.25;
-
-            updateIndex(sensexDiv, 75000, sensexChange);
-            updateIndex(niftyDiv, 22750, niftyChange);
-        }
-
-        // --- Quiz Logic ---
-        const quizQuestions = [
+        // --- Daily Quiz Logic ---
+        const quizData = [
             {
                 question: "Which river flows through Varanasi (Kashi)?",
-                options: ["Yamuna", "Ganges (G
+                options: ["Yamuna", "Ganga", "Saraswati", "Godavari"],
+                correctAnswer: "Ganga"
+            },
+            {
+                question: "What is the traditional name of the city, often used poetically?",
+                options: ["Prayagraj", "Ayodhya", "Benaras", "Patliputra"],
+                correctAnswer: "Benaras"
+            },
+            {
+                question: "The Kashi Vishwanath Temple is dedicated to which deity?",
+                options: ["Lord Vishnu", "Lord Shiva", "Goddess Lakshmi", "Lord Brahma"],
+                correctAnswer: "Lord Shiva"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        const quizQuestionEl = document.getElementById('quiz-question');
+        const quizOptionsEl = document.getElementById('quiz-options');
+        const nextButton = document.getElementById('next-button');
+        const quizContainerEl = document.getElementById('quiz-container');
+        const quizResultEl = document.getElementById('quiz-result');
+
+        function loadQuestion() {
+            answered = false;
+            if (currentQuestionIndex < quizData.length) {
+                const currentQuiz = quizData[currentQuestionIndex];
+                quizQuestionEl.textContent = `Q${currentQuestionIndex + 1}: ${currentQuiz.question}`;
+                quizOptionsEl.innerHTML = '';
+                nextButton.disabled = true;
+                nextButton.textContent = 'Select an Answer';
+                nextButton.classList.remove('bg-kashi-red', 'hover:bg-red-700');
+                nextButton.classList.add('bg-gray-400');
+
+
+                currentQuiz.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.classList.add('quiz-option', 'w-full', 'py-3', 'px-4', 'text-left', 'bg-gray-100', 'text-gray-800', 'rounded-lg', 'border', 'border-gray-300', 'font-medium', 'block');
+                    button.addEventListener('click', () => selectAnswer(button, option, currentQuiz.correctAnswer));
+                    quizOptionsEl.appendChild(button);
+                });
+            } else {
+                showResults();
+            }
+        }
+
+        function selectAnswer(selectedButton, selectedOption, correctAnswer) {
+            if (answered) return;
+
+            answered = true;
+            const options = quizOptionsEl.querySelectorAll('.quiz-option');
+            options.forEach(button => {
+                button.disabled = true;
+                if (button.textContent === correctAnswer) {
+                    button.classList.remove('bg-gray-100');
+                    button.classList.add('bg-green-100', 'border-green-600', 'font-bold');
+                } else if (button === selectedButton) {
+                    button.classList.remove('bg-gray-100');
+                    button.classList.add('bg-red-100', 'border-red-600');
+                }
+            });
+
+            if (selectedOption === correctAnswer) {
+                score++;
+            }
+
+            nextButton.disabled = false;
+            nextButton.textContent = 'Next Question →';
+            nextButton.classList.remove('bg-gray-400');
+            nextButton.classList.add('bg-kashi-red', 'hover:bg-red-700');
+        }
+
+        function showResults() {
+            quizContainerEl.classList.add('hidden');
+            quizResultEl.classList.remove(
